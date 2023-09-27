@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 interface item {
   id: number;
@@ -25,16 +25,6 @@ export const TodoList: React.FC = () => {
     setTodos(newTodos);
   };
 
-  // const handleToggle1 = (id: number) => {
-  //   const newTodos: item[] = []
-  //   for(let i = 0; i < todos.length; i++){
-  //     const todo: item = todos[i];
-  //     if(todo.id === id){
-  //       return { ...todo, completed: !todo.completed}
-  //     }
-  //     return todo;
-  //     }
-  //   }
   const handleClick = () => {
     const newTodo: item = { id: Date.now(), text: input, completed: false };
     setTodos([...todos, newTodo]);
