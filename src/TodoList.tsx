@@ -1,22 +1,20 @@
 import { useState } from "react";
 
-interface item {
+interface Todo {
   id: number;
   text: string;
   completed: boolean;
 }
 
 export const TodoList: React.FC = () => {
-  const [todos, setTodos] = useState<item[]>([
+  const [todos, setTodos] = useState<Todo[]>([
     { id: 1, text: "Learn typescript you dummy", completed: false },
     { id: 2, text: "You need to change diaper", completed: false },
-    { id: 3, text: "Build a Todo app", completed: false },
   ]);
-
-  const [input, setInput] = useState<string>("");
+  const [todoText, setTodoText] = useState<string>("");
 
   const handleToggle = (id: number) => {
-    const newTodos: item[] = todos.map((todo) => {
+    const newTodos: Todo[] = todos.map((todo) => {
       if (todo.id === id) {
         return { ...todo, completed: !todo.completed };
       }
@@ -26,7 +24,7 @@ export const TodoList: React.FC = () => {
   };
 
   const handleClick = () => {
-    const newTodo: item = { id: Date.now(), text: input, completed: false };
+    const newTodo: Todo = { id: Date.now(), text: todoText, completed: false };
     setTodos([...todos, newTodo]);
   };
   return (
@@ -39,14 +37,14 @@ export const TodoList: React.FC = () => {
             onClick={() => handleToggle(todo.id)}
             style={{ textDecoration: todo.completed ? "line-through" : "none" }}
           >
-            {todo.text}
+            {`${todo.text}, ${todo.completed.toString()}`}
           </li>
         ))}
       </ul>
       <input
         type="text"
         placeholder="Enter Todo Item"
-        onChange={(e) => setInput(e.currentTarget.value)}
+        onChange={(e) => setTodoText(e.currentTarget.value)}
       />
       <button onClick={handleClick}>Add</button>
     </div>
