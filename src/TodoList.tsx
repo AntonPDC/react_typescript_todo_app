@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./components/Button/Button";
 
 interface Todo {
   id: number;
@@ -27,6 +28,7 @@ export const TodoList: React.FC = () => {
     const newTodo: Todo = { id: Date.now(), text: todoText, completed: false };
     setTodos([...todos, newTodo]);
   };
+
   return (
     <div className="main-container">
       <h1>TodoList</h1>
@@ -46,7 +48,7 @@ export const TodoList: React.FC = () => {
         placeholder="Enter Todo Item"
         onChange={(e) => setTodoText(e.currentTarget.value)}
       />
-      <button onClick={handleClick}>Add</button>
+      <Button buttonText="Add" handleClick={handleClick} />
     </div>
   );
 };
