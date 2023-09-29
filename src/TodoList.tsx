@@ -53,11 +53,6 @@ export const TodoList: React.FC = () => {
         placeholder="Enter Todo Item"
         onChange={handleInputChange}
       />
-      {/* <input
-        type="text"
-        placeholder="Enter Todo Item"
-        onChange={(e) => setTodoText(e.currentTarget.value)}
-      /> */}
       <Button buttonText="Add" handleClick={handleClick} />
     </div>
   );
