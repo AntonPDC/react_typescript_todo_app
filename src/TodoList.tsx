@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Button from "./components/Button/Button";
+import Input from "./components/Input/Input";
 
 interface Todo {
   id: number;
@@ -29,6 +30,10 @@ export const TodoList: React.FC = () => {
     setTodos([...todos, newTodo]);
   };
 
+  const handleInputChange = (value: string) => {
+    setTodoText(value);
+  };
+
   return (
     <div className="main-container">
       <h1>TodoList</h1>
@@ -43,11 +48,7 @@ export const TodoList: React.FC = () => {
           </li>
         ))}
       </ul>
-      <input
-        type="text"
-        placeholder="Enter Todo Item"
-        onChange={(e) => setTodoText(e.currentTarget.value)}
-      />
+      <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <Button buttonText="Add" handleClick={handleClick} />
     </div>
   );
