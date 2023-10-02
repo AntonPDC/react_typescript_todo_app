@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "./components/Button/Button";
 import Input from "./components/Input/Input";
+import TodoItemList from "./components/TodoItemList/TodoItemList";
 
 interface Todo {
   id: number;
@@ -37,17 +38,8 @@ export const TodoList: React.FC = () => {
   return (
     <div className="main-container">
       <h1>TodoList</h1>
-      <ul>
-        {todos.map((todo) => (
-          <li
-            key={todo.id}
-            onClick={() => handleToggle(todo.id)}
-            style={{ textDecoration: todo.completed ? "line-through" : "none" }}
-          >
-            {`${todo.text}, ${todo.completed.toString()}`}
-          </li>
-        ))}
-      </ul>
+
+      <TodoItemList todos={todos} handleListToggle={handleToggle} />
       <Input
         id={Date.now()}
         placeholder="Enter Todo Item"
