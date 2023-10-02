@@ -1,22 +1,18 @@
 import "./Input.css";
 
 interface InputProps {
-  id: number;
-  placeholder: string;
   onChange: (value: string) => void;
+  placeholder: string;
+  type?: "date" | "email" | "password" | "text";
 }
 
-function Input({ id, placeholder, onChange }: InputProps) {
+function Input({ onChange, placeholder, type = "text" }: InputProps) {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.currentTarget.value);
   };
 
   return (
-    <input
-      id={`${id}`}
-      placeholder={placeholder}
-      onChange={handleInputChange}
-    />
+    <input type={type} placeholder={placeholder} onChange={handleInputChange} />
   );
 }
 

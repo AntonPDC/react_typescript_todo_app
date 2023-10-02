@@ -48,11 +48,7 @@ export const TodoList: React.FC = () => {
           </li>
         ))}
       </ul>
-      <Input
-        id={Date.now()}
-        placeholder="Enter Todo Item"
-        onChange={handleInputChange}
-      />
+      <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <Button buttonText="Add" handleClick={handleClick} />
     </div>
   );
