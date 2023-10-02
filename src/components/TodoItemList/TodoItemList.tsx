@@ -1,13 +1,13 @@
 import "./TodoItemList.css";
 
-interface TodoItem {
+interface Todo {
   id: number;
   text: string;
   completed: boolean;
 }
 
 interface TodoItemListProps {
-  todos: TodoItem[];
+  todos: Todo[];
   handleListToggle: (id: number) => void;
 }
 
