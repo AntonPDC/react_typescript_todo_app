@@ -1,4 +1,4 @@
-import "./TodoItemList.css";
+import "./TodoList.css";
 
 export interface Todo {
   id: number;
@@ -6,11 +6,11 @@ export interface Todo {
   completed: boolean;
 }
 
-interface TodoItemListProps {
+interface TodoListProps {
   todos: Todo[];
   handleListToggle: (id: number) => void;
 }
-function TodoItems({ todos, handleListToggle }: TodoItemListProps) {
+function TodoItems({ todos, handleListToggle }: TodoListProps) {
   return (
     <ul>
       {todos.map((todo) => (

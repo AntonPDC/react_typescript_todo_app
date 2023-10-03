@@ -1,10 +1,9 @@
 import { useState } from "react";
 import Button from "./components/Button/Button";
 import Input from "./components/Input/Input";
-import { Todo } from "./components/TodoItemList/TodoItemList";
-import TodoItems from "./components/TodoItemList/TodoItemList";
+import TodoItems, { Todo } from "./components/TodoList/TodoList";
 
-export const Dashboard: React.FC = () => {
+function Dashboard() {
   const [todos, setTodos] = useState<Todo[]>([
     { id: 1, text: "Learn typescript you dummy", completed: false },
     { id: 2, text: "You need to change diaper", completed: false },
@@ -38,4 +37,5 @@ export const Dashboard: React.FC = () => {
       <Button buttonText="Add" handleClick={handleClick} />
     </div>
   );
-};
+}
+export default Dashboard;
