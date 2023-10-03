@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Button from "./components/Button/Button";
 import Input from "./components/Input/Input";
-import TodoItems, { Todo } from "./components/TodoList/TodoList";
+import TodoList, { Todo } from "./components/TodoList/TodoList";
 
 function Dashboard() {
   const [todos, setTodos] = useState<Todo[]>([
@@ -32,7 +32,7 @@ function Dashboard() {
   return (
     <div className="main-container">
       <h1>TodoList</h1>
-      <TodoItems todos={todos} handleListToggle={handleToggle} />
+      <TodoList todos={todos} handleListToggle={handleToggle} />
       <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <Button buttonText="Add" handleClick={handleClick} />
     </div>

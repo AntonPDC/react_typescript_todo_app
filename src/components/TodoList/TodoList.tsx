@@ -10,7 +10,7 @@ interface TodoListProps {
   todos: Todo[];
   handleListToggle: (id: number) => void;
 }
-function TodoItems({ todos, handleListToggle }: TodoListProps) {
+function TodoList({ todos, handleListToggle }: TodoListProps) {
   return (
     <ul>
       {todos.map((todo) => (
@@ -26,4 +26,4 @@ function TodoItems({ todos, handleListToggle }: TodoListProps) {
   );
 }
 
-export default TodoItems;
+export default TodoList;
