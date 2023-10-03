@@ -1,15 +1,10 @@
 import { useState } from "react";
 import Button from "./components/Button/Button";
 import Input from "./components/Input/Input";
-import TodoItemList from "./components/TodoItemList/TodoItemList";
+import { Todo } from "./components/TodoItemList/TodoItemList";
+import TodoItems from "./components/TodoItemList/TodoItemList";
 
-interface Todo {
-  id: number;
-  text: string;
-  completed: boolean;
-}
-
-export const TodoList: React.FC = () => {
+export const Dashboard: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([
     { id: 1, text: "Learn typescript you dummy", completed: false },
     { id: 2, text: "You need to change diaper", completed: false },
@@ -38,7 +33,7 @@ export const TodoList: React.FC = () => {
   return (
     <div className="main-container">
       <h1>TodoList</h1>
-      <TodoItemList todos={todos} handleListToggle={handleToggle} />
+      <TodoItems todos={todos} handleListToggle={handleToggle} />
       <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <Button buttonText="Add" handleClick={handleClick} />
     </div>

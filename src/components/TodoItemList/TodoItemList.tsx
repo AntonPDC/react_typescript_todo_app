@@ -1,6 +1,6 @@
 import "./TodoItemList.css";
 
-interface Todo {
+export interface Todo {
   id: number;
   text: string;
   completed: boolean;
@@ -10,11 +10,7 @@ interface TodoItemListProps {
   todos: Todo[];
   handleListToggle: (id: number) => void;
 }
-
-const TodoItemList: React.FC<TodoItemListProps> = ({
-  todos,
-  handleListToggle,
-}) => {
+function TodoItems({ todos, handleListToggle }: TodoItemListProps) {
   return (
     <ul>
       {todos.map((todo) => (
@@ -28,6 +24,6 @@ const TodoItemList: React.FC<TodoItemListProps> = ({
       ))}
     </ul>
   );
-};
+}
 
-export default TodoItemList;
+export default TodoItems;
