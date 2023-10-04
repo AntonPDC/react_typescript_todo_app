@@ -3,7 +3,7 @@ button {
   width: 100px;
   background-color: #245abc;
   color: white;
-  border-radius: 2500rem;
+  border-radius: 15px;
   border-style: solid;
   cursor: pointer;
   display: inline-flex;
