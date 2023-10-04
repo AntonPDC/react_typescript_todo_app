@@ -22,13 +22,27 @@ function Dashboard() {
     setTodos(newTodos);
   };
 
-  const handleClick = () => {
+  const handleAddClick = () => {
+    if (!todoText) return;
     const newTodo: Todo = { id: Date.now(), text: todoText, completed: false };
     setTodos([...todos, newTodo]);
+  };
+  const handleDeleteClick = () => {
+    const newTodos: Todo[] = todos.filter((todo) => !todo.completed);
+    setTodos(newTodos);
   };
 
   const handleInputChange = (value: string) => {
     setTodoText(value);
+  };
+
+  const itemsToDelete = (): boolean => {
+    for (let todo of todos) {
+      if (todo.completed) {
+        return true;
+      }
+    }
+    return false;
   };
 
   return (
@@ -36,7 +50,19 @@ function Dashboard() {
       <Header headerText="Todo List" />
       <TodoList todos={todos} handleListToggle={handleToggle} />
       <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
-      <Button buttonText="Add" handleClick={handleClick} />
+      <div className="button-container">
+        <Button
+          buttonText="Add"
+          disabled={!todoText}
+          handleClick={handleAddClick}
+        />
+        <Button
+          buttonText="Delete"
+          disabled={!itemsToDelete()}
+          handleClick={handleDeleteClick}
+          variant="warn"
+        />
+      </div>
     </div>
   );
 }

@@ -1,7 +1,6 @@
 button {
   height: 30px;
   width: 100px;
-  background-color: #245abc;
   color: white;
   border-radius: 15px;
   border-style: solid;
@@ -10,5 +9,24 @@ button {
   font-weight: 750;
   align-items: center;
   justify-content: center;
-  margin: 15px;
+  margin: 15px 5px;
+}
+
+.btn-primary {
+  background-color: #245abc;
+}
+
+.btn-success {
+  background-color: green;
+}
+
+.btn-warn {
+  background-color: rgba(239, 210, 160, 0.999);
+  color: black;
+}
+
+.btn-disabled {
+  background-color: gray;
+  color: #242425;
+  cursor: default;
 }
