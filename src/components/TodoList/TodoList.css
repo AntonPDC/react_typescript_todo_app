@@ -1,3 +1,13 @@
 li {
   margin-top: 15px;
+  list-style-type: square;
+  color: rgb(47, 105, 156);
+}
+
+li:hover {
+  background-color: rgb(117, 147, 188);
+}
+
+ul {
+  padding: 0;
 }
