@@ -1,7 +1,8 @@
 import { useState } from "react";
-import Button from "./components/Button/Button";
-import Input from "./components/Input/Input";
-import TodoList, { Todo } from "./components/TodoList/TodoList";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import TodoList, { Todo } from "../../components/TodoList/TodoList";
+import "./Dashboard.css";
 
 function Dashboard() {
   const [todos, setTodos] = useState<Todo[]>([
