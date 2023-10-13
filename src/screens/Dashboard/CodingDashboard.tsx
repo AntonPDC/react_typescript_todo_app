@@ -5,10 +5,10 @@ import TodoList, { Todo } from "../../components/TodoList/TodoList";
 import Header from "../../components/Header/Header";
 import "./Dashboard.css";
 
-function Dashboard() {
+function CodingDashboard() {
   const [todos, setTodos] = useState<Todo[]>([
     { id: 1, text: "Learn typescript you dummy", completed: false },
-    { id: 2, text: "You need to change diaper", completed: false },
+    { id: 2, text: "You need to work on Front-End stuff", completed: false },
   ]);
   const [todoText, setTodoText] = useState<string>("");
 
@@ -47,7 +47,7 @@ function Dashboard() {
 
   return (
     <div className="main-container">
-      <Header headerText="Todo List" />
+      <Header headerText="Coding List" />
       <TodoList todos={todos} handleListToggle={handleToggle} />
       <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <div className="button-container">
@@ -66,4 +66,4 @@ function Dashboard() {
     </div>
   );
 }
-export default Dashboard;
+export default CodingDashboard;

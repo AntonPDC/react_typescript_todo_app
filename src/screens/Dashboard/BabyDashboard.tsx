@@ -1,14 +1,14 @@
 import { useState } from "react";
-import Button from "../../../components/Button/Button";
-import Input from "../../../components/Input/Input";
-import TodoList, { Todo } from "../../../components/TodoList/TodoList";
-import Header from "../../../components/Header/Header";
-import "./CodingDashboard.css";
+import Button from "../../components/Button/Button";
+import Input from "../../components/Input/Input";
+import TodoList, { Todo } from "../../components/TodoList/TodoList";
+import Header from "../../components/Header/Header";
+import "./Dashboard.css";
 
-function CodingDashboard() {
+function BabyDashboard() {
   const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, text: "Learn typescript you dummy", completed: false },
-    { id: 2, text: "You need to work on Front-End stuff", completed: false },
+    { id: 1, text: "Bath Time", completed: false },
+    { id: 2, text: "You need to change diaper", completed: false },
   ]);
   const [todoText, setTodoText] = useState<string>("");
 
@@ -47,7 +47,7 @@ function CodingDashboard() {
 
   return (
     <div className="main-container">
-      <Header headerText="Todo List" />
+      <Header headerText="Baby List" />
       <TodoList todos={todos} handleListToggle={handleToggle} />
       <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <div className="button-container">
@@ -66,4 +66,4 @@ function CodingDashboard() {
     </div>
   );
 }
-export default CodingDashboard;
+export default BabyDashboard;
