@@ -1,0 +1,29 @@
+.navbarContainer {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
+
+.baby-btn {
+  background-color: aqua;
+  color: white;
+  margin: 25px;
+}
+
+.baby-btn:hover {
+  background-color: rgb(223, 236, 157);
+}
+
+.coding-btn {
+  background-color: gray;
+  color: white;
+  margin: 25px;
+}
+.coding-btn:hover {
+  background-color: rgb(117, 147, 188);
+}
