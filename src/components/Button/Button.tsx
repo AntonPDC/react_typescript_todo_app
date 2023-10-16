@@ -30,8 +30,7 @@ function Button({
   };
   return (
     <button className={getClass(variant, disabled)} onClick={handleClick}>
-      {" "}
-      {buttonText}{" "}
+      {buttonText}
     </button>
   );
 }

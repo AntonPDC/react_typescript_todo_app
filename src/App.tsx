@@ -1,11 +1,21 @@
 import "./App.css";
-import Dashboard from "./screens/Dashboard/Dashboard";
-
+import ChoresDashboard from "./screens/Dashboard/ChoresDashboard";
+import Navbar from "./components/Navbar/Navbar";
+import BabyDashboard from "./screens/Dashboard/BabyDashboard";
+import CodingDashboard from "./screens/Dashboard/CodingDashboard";
+import { Route, Routes, Navigate } from "react-router-dom";
+import Header from "./components/Header/Header";
 function App() {
   return (
-    <div className="App">
-      <Dashboard />
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/baby-dashboard" element={<BabyDashboard />} />
+        <Route path="/coding-dashboard" element={<CodingDashboard />} />
+        <Route path="/chores-dashboard" element={<ChoresDashboard />} />
+        <Route path="*" element={<Navigate to="/coding-dashboard" replace />} />
+      </Routes>
+    </>
   );
 }
 

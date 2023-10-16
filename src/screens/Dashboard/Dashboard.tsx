@@ -5,11 +5,13 @@ import TodoList, { Todo } from "../../components/TodoList/TodoList";
 import Header from "../../components/Header/Header";
 import "./Dashboard.css";
 
-function Dashboard() {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, text: "Learn typescript you dummy", completed: false },
-    { id: 2, text: "You need to change diaper", completed: false },
-  ]);
+interface DashboardProps {
+  title: string;
+  todos: Todo[];
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+}
+
+function Dashboard({ title, todos, setTodos }: DashboardProps) {
   const [todoText, setTodoText] = useState<string>("");
 
   const handleToggle = (id: number) => {
@@ -47,7 +49,7 @@ function Dashboard() {
 
   return (
     <div className="main-container">
-      <Header headerText="Todo List" />
+      <Header headerText={title} />
       <TodoList todos={todos} handleListToggle={handleToggle} />
       <Input placeholder="Enter Todo Item" onChange={handleInputChange} />
       <div className="button-container">
