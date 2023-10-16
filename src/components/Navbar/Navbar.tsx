@@ -15,6 +15,10 @@ function Navbar() {
         buttonText="Coding List"
         handleClick={() => navigate("/coding-dashboard")}
       />
+      <Button
+        buttonText="Chores List"
+        handleClick={() => navigate("/chores-dashboard")}
+      />
     </div>
   );
 }
