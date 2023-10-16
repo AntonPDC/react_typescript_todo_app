@@ -1,17 +1,22 @@
+import Button from "../Button/Button";
+import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { NavLink } from "react-router-dom";
 
 function Navbar() {
+  const navigate = useNavigate();
+
+  const navToBabyDashboard = () => {
+    navigate("/baby-dashboard");
+  };
+
+  const navToCodingDashboard = () => {
+    navigate("/coding-dashboard");
+  };
+
   return (
     <div className="navbarContainer">
-      <nav>
-        <button className="baby-btn">
-          <NavLink to="/baby-dashboard">Baby List</NavLink>
-        </button>
-        <button className="coding-btn">
-          <NavLink to="/coding-dashboard">Coding List</NavLink>
-        </button>
-      </nav>
+      <Button buttonText="Baby List" handleClick={navToBabyDashboard} />
+      <Button buttonText="Coding List" handleClick={navToCodingDashboard} />
     </div>
   );
 }
