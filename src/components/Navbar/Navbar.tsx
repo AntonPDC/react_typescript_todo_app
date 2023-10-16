@@ -2,23 +2,35 @@ import Button from "../Button/Button";
 import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
 
+interface NavbarBtn {
+  buttonText: string;
+  route: string;
+}
+
 function Navbar() {
   const navigate = useNavigate();
-
+  const buttons: NavbarBtn[] = [
+    {
+      buttonText: "Baby List",
+      route: "/baby-dashboard",
+    },
+    {
+      buttonText: "Coding List",
+      route: "/coding-dashboard",
+    },
+    {
+      buttonText: "Chores List",
+      route: "/chores-dashboard",
+    },
+  ];
   return (
     <div className="navbarContainer">
-      <Button
-        buttonText="Baby List"
-        handleClick={() => navigate("/baby-dashboard")}
-      />
-      <Button
-        buttonText="Coding List"
-        handleClick={() => navigate("/coding-dashboard")}
-      />
-      <Button
-        buttonText="Chores List"
-        handleClick={() => navigate("/chores-dashboard")}
-      />
+      {buttons.map((btn) => (
+        <Button
+          buttonText={btn.buttonText}
+          handleClick={() => navigate(btn.route)}
+        />
+      ))}
     </div>
   );
 }
