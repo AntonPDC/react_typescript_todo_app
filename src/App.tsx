@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar/Navbar";
 import BabyDashboard from "./screens/Dashboard/BabyDashboard";
 import CodingDashboard from "./screens/Dashboard/CodingDashboard";
 import { Route, Routes, Navigate } from "react-router-dom";
-import Header from "./components/Header/Header";
+
 function App() {
   return (
     <>

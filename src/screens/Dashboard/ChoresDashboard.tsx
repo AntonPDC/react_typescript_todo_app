@@ -1,13 +1,10 @@
-import { useState } from "react";
-import { Todo } from "../../components/TodoList/TodoList";
 import "./Dashboard.css";
 import Dashboard from "./Dashboard";
+import { useRecoilState } from "recoil";
+import { todoChoresAtom } from "../../state/todos";
 
 function ChoresDashboard() {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, text: "Vacuum", completed: false },
-    { id: 2, text: "Dust", completed: false },
-  ]);
+  const [todos, setTodos] = useRecoilState(todoChoresAtom);
 
   return <Dashboard title="Chores List" todos={todos} setTodos={setTodos} />;
 }
