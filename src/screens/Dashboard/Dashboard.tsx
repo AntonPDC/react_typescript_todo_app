@@ -4,11 +4,12 @@ import Input from "../../components/Input/Input";
 import TodoList, { Todo } from "../../components/TodoList/TodoList";
 import Header from "../../components/Header/Header";
 import "./Dashboard.css";
+import { SetterOrUpdater } from "recoil";
 
 interface DashboardProps {
   title: string;
   todos: Todo[];
-  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
+  setTodos: SetterOrUpdater<Todo[]>;
 }
 
 function Dashboard({ title, todos, setTodos }: DashboardProps) {

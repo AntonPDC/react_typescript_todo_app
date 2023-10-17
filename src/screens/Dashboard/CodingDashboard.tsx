@@ -1,13 +1,11 @@
-import { useState } from "react";
-import { Todo } from "../../components/TodoList/TodoList";
 import "./Dashboard.css";
 import Dashboard from "./Dashboard";
+import { useRecoilState } from "recoil";
+import { todoCodingAtom } from "../../state/todos";
 
 function CodingDashboard() {
-  const [todos, setTodos] = useState<Todo[]>([
-    { id: 1, text: "Learn typescript you dummy", completed: false },
-    { id: 2, text: "You need to work on Front-End stuff", completed: false },
-  ]);
+  const [todos, setTodos] = useRecoilState(todoCodingAtom);
+
   return <Dashboard title="Coding List" todos={todos} setTodos={setTodos} />;
 }
 export default CodingDashboard;
